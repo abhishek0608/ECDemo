@@ -6,10 +6,7 @@ import {
     monthNames
   } from "./expediteCommerceUtil.js";
 
-import myResource from '@salesforce/resourceUrl/expediteCommereceLogo';
-import backImage from '@salesforce/resourceUrl/expediteCommereceBI';
-import lineImage from '@salesforce/resourceUrl/expediteCommereceLine';
-import viewButton from '@salesforce/resourceUrl/expediteCommereceButton';
+import myResource from '@salesforce/resourceUrl/expediteCommerce';
 
 
 export default class ExpediteCommerce extends LightningElement {
@@ -20,7 +17,6 @@ export default class ExpediteCommerce extends LightningElement {
     imageUrl;
     backImage;
     lineUrl;
-    viewButtonUrl;
     currentView = 'year';
     connectedCallback(){
         const linedataList = [];
@@ -31,10 +27,9 @@ export default class ExpediteCommerce extends LightningElement {
         const monthSummaryMap = new Map();
         let yearAndAmount = new Map();
         let monthAndAmount = new Map();
-        this.imageUrl = myResource;
-        this.backImageUrl = backImage;
-        this.lineUrl = lineImage;
-        this.viewButtonUrl = viewButton;
+        this.imageUrl = myResource + '/expediteCommerceResoruces/expedite_ico_web.svg';
+        this.backImageUrl = myResource + '/expediteCommerceResoruces/MaterialIcon1.svg';
+        this.lineUrl = myResource + '/expediteCommerceResoruces/Line1.svg';;
         summaryYears.responseData.yearsData.forEach(function(value, i){
             if(yearSummaryMap.has('Summary')){
                 let oldMap = yearSummaryMap.get('Summary');

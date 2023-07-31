@@ -1,0 +1,16 @@
+<apex:page showHeader="false" sidebar="false">
+    <apex:includeLightning />
+    <div id="lightningvf" />
+    <script>
+        $Lightning.use("c:lwcvf", function() {
+          $Lightning.createComponent("c:expediteCommerce",
+              {},
+              "lightningvf",
+              function(cmp) {
+                console.log("button was created");
+                // do some stuff
+              }
+          );
+        });
+    </script>
+</apex:page>
