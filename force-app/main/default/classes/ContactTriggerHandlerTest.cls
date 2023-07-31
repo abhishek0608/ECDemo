@@ -32,5 +32,14 @@ private class ContactTriggerHandlerTest {
         System.assertEquals(testAccount2.Id, insertedRecords[1].AccountId);
         System.assertEquals(testContact1.Id, insertedRecords[0].ContactId);
         System.assertEquals(testContact3.Id, insertedRecords[1].ContactId);
+        Contact testContact5 = new Contact(AccountId = testAccount2.Id , LastName = 'testContact5');
+        insert testContact5;
+        insertedRecords = [SELECT Id, Role, AccountId, ContactId FROM AccountContactRole];
+        System.assertEquals(2, insertedRecords.size()); // There should be 2 AccountContactRole records inserted
+ 		System.assertEquals(testAccount1.Id, insertedRecords[0].AccountId);
+        System.assertEquals(testAccount2.Id, insertedRecords[1].AccountId);
+        System.assertEquals(testContact1.Id, insertedRecords[0].ContactId);
+        System.assertEquals(testContact3.Id, insertedRecords[1].ContactId);
+
     }
 }
