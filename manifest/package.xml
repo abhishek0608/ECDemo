@@ -18,11 +18,7 @@
         <name>AuraDefinitionBundle</name>
     </types>
     <types>
-        <members>expediteCommerece1</members>
-        <members>expediteCommereceBI</members>
-        <members>expediteCommereceButton</members>
-        <members>expediteCommereceLine</members>
-        <members>expediteCommereceLogo</members>
+        <members>expediteCommerce</members>
         <name>StaticResource</name>
     </types>
     <types>
